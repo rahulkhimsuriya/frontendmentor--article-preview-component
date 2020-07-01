@@ -108,6 +108,7 @@ a:focus {
 	border: none;
 	border-radius: 10rem;
 	padding: 0.5rem;
+	z-index: 2;
 }
 
 .article__share .article__share--button svg {
@@ -115,7 +116,7 @@ a:focus {
 }
 
 .article__share .article__share--button.active {
-	background-color: var(--very-dark-grayish-blue);
+	background-color: var(--desaturated-dark-blue);
 }
 
 .article__share .article__share--button.active svg {
@@ -158,4 +159,32 @@ a:focus {
 .article__share .article__share--card span {
 	padding: 0.5rem;
 	display: inline-block;
+}
+
+/* MOBILE SITE */
+@media only screen and (max-width: 675px) {
+	body {
+		padding: 2rem;
+	}
+
+	.article {
+		flex-direction: column;
+		overflow: hidden;
+		padding: 0;
+		max-width: 80%;
+	}
+
+	.article__body {
+		padding-bottom: 0;
+	}
+
+	.article__share .article__share--card {
+		top: 0%;
+		left: -60%;
+	}
+
+	.article__share .article__share--card::after {
+		content: '';
+		border: 10px solid transparent;
+	}
 }
